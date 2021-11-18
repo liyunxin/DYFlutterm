@@ -5,9 +5,48 @@ import 'package:flutter_boost/flutter_boost.dart';
 class CustomFlutterBinding extends WidgetsFlutterBinding
     with BoostFlutterBinding {}
 
+///全局生命周期监听示例
+class AppLifecycleObserver with GlobalPageVisibilityObserver {
+  @override
+  void onBackground(Route route) {
+    super.onBackground(route);
+    print("AppLifecycleObserver - onBackground");
+  }
+
+  @override
+  void onForeground(Route route) {
+    super.onForeground(route);
+    print("AppLifecycleObserver - onForground");
+  }
+
+  @override
+  void onPagePush(Route route) {
+    super.onPagePush(route);
+    print("AppLifecycleObserver - onPagePush");
+  }
+
+  @override
+  void onPagePop(Route route) {
+    super.onPagePop(route);
+    print("AppLifecycleObserver - onPagePop");
+  }
+
+  @override
+  void onPageHide(Route route) {
+    super.onPageHide(route);
+    print("AppLifecycleObserver - onPageHide");
+  }
+
+  @override
+  void onPageShow(Route route) {
+    super.onPageShow(route);
+    print("AppLifecycleObserver - onPageShow");
+  }
+}
+
 void main() {
   ///添加全局生命周期监听类
-  //PageVisibilityBinding.instance.addGlobalObserver(AppLifecycleObserver());
+  PageVisibilityBinding.instance.addGlobalObserver(AppLifecycleObserver());
 
   ///这里的CustomFlutterBinding调用务必不可缺少，用于控制Boost状态的resume和pause
   CustomFlutterBinding();
