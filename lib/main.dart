@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
           String data = map['data'];
           return GestureDetector(
             onTap: () {
-              var arguments = Map();
+              Map<String, dynamic> arguments = Map();
               arguments["naviTitle"] = "德玛西亚";
               BoostNavigator.instance.push("goNative", arguments: arguments);
             },
