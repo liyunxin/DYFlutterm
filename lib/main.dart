@@ -74,11 +74,17 @@ class _MyAppState extends State<MyApp> {
   static Map<String, FlutterBoostRouteFactory> routerMap = {
     'mainPage': (settings, uniqueId) {
       return CupertinoPageRoute(
-          settings: settings,
-          builder: (_) {
-            Map<String, Object> map = settings.arguments;
-            String data = map['data'];
-            return Container(
+        settings: settings,
+        builder: (_) {
+          Map<String, Object> map = settings.arguments;
+          String data = map['data'];
+          return GestureDetector(
+            onTap: () {
+              var arguments = Map();
+              arguments["naviTitle"] = "德玛西亚";
+              BoostNavigator.instance.push("goNative", arguments: arguments);
+            },
+            child: Container(
               color: Colors.white,
               child: Center(
                 child: Text(
@@ -89,8 +95,10 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-            );
-          });
+            ),
+          );
+        },
+      );
     },
     'simplePage': (settings, uniqueId) {
       Map<String, Object> map = settings.arguments ?? {};
