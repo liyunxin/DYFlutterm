@@ -10,7 +10,7 @@ Widget _widgetForRoute(String route) {
         color: Colors.white,
         child: Center(
           child: Text(
-            "route1",
+            "route1 白板 or 原生方案",
             textDirection: TextDirection.ltr,
             style: TextStyle(
               color: Colors.black,
@@ -23,7 +23,7 @@ Widget _widgetForRoute(String route) {
         color: Colors.white,
         child: Center(
           child: Text(
-            "route2",
+            "route2 白板 or 原生方案",
             textDirection: TextDirection.ltr,
             style: TextStyle(
               color: Colors.black,
@@ -36,7 +36,7 @@ Widget _widgetForRoute(String route) {
         color: Colors.white,
         child: Center(
           child: Text(
-            'Unknown route: $route',
+            'Unknown route: $route 白板 or 原生方案',
             textDirection: TextDirection.ltr,
             style: TextStyle(
               color: Colors.black,
